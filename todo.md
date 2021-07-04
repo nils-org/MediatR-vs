@@ -1,16 +1,14 @@
 # TODO
 
 ## Needed for release 0.1.0
-* build pipeline (check madskristensen build tools ?)
-* auto deployment to https://www.vsixgallery.com/
 * Solution Folders are not searched...
-
-## New Features/Improvements
-
 * UI more like VS
   * Current selection in tree (esp. in dark mode)
   * "menu stripe" in tool window
   * Refresh-Button as Icon
+
+## New Features/Improvements
+
 * searching in tool window
 * hide "empty" projects in tool window (plus show all in menu stripe?)
 * Icon for vsix
@@ -19,7 +17,9 @@
 * Different groupings in tree
   * by project
   * by type 
+* Auto-Refresh on project-load / VS load
 
 ## New Stories
 
 * Jump from Request/Notification to "Search all handlers" window
+* Support VS 2022
