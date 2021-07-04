@@ -30,7 +30,7 @@ Setup(ctx =>
         XmlPoke(
           vsix, 
           "/x:PackageManifest/x:Metadata/x:Identity/@Version", 
-          gitVersion.SemVer, 
+          gitVersion.MajorMinorPatch, 
           new XmlPokeSettings 
           {
             Namespaces = new Dictionary<string, string> 

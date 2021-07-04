@@ -32,12 +32,9 @@ jobs:
           path: tools
           key: ${{ runner.os }}-tools-${{ hashFiles('recipe.cake') }}
       - name: Build project
-        uses: cake-build/cake-action@v1
-        with:
-          script-path: recipe.cake
-          target: Default
-          verbosity: Diagnostic
-          cake-version: 1.1.0
+        shell: pwsh
+        run: |
+          .\build.ps1 --verbosity=diagnostic
       - name: Upload Packages
         uses: actions/upload-artifact@v2
         if: runner.os == 'Windows'
