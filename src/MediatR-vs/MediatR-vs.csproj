@@ -94,7 +94,7 @@
     <PackageReference Include="Microsoft.VisualStudio.ProjectSystem.Analyzers">
       <Version>15.8.243</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.206" ExcludeAssets="runtime" />
+    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.10.31321.278" ExcludeAssets="runtime" />
     <PackageReference Include="Microsoft.VisualStudio.SDK.Analyzers">
       <Version>16.10.1</Version>
     </PackageReference>
