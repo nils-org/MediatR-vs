@@ -5,7 +5,7 @@
         <DisplayName>MediatR tools for Visual Studio</DisplayName>
         <Description xml:space="preserve">Provides some tooling in MediatR projects.</Description>
         <MoreInfo>https://github.com/nils-org/MediatR-vs/</MoreInfo>
-        <License>LICENSE.txt</License>
+        <License>Resources\LICENSE.txt</License>
         <ReleaseNotes>https://github.com/nils-org/MediatR-vs/releases/</ReleaseNotes>
         <Icon>Resources\vsixPackageLogo.png</Icon>
         <PreviewImage>Resources\vsixPackageLogo.png</PreviewImage>

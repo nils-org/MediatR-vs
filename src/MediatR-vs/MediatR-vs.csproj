@@ -53,6 +53,11 @@
   <ItemGroup>
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="MediatrToolWindowViewModel.cs" />
+    <Compile Include="MediatRvsPackage.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MediatRvsPackage.vsct</DependentUpon>
+    </Compile>
     <Compile Include="Models\MediatrElement.cs" />
     <Compile Include="Models\MediatrElementType.cs" />
     <Compile Include="Models\MediatrProject.cs" />
@@ -73,15 +78,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\LICENSE.txt">
-      <Link>LICENSE.txt</Link>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="..\..\README.md">
-      <Link>README.md</Link>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
     <None Include="Key.snk" />
+    <Content Include="..\..\LICENSE.txt">
+      <Link>Resources\LICENSE.txt</Link>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Monikers.imagemanifest">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -124,6 +125,8 @@
     </Resource>
     <VSCTCompile Include="MediatRvsPackage.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
+      <Generator>VsctGenerator</Generator>
+      <LastGenOutput>MediatRvsPackage.cs</LastGenOutput>
     </VSCTCompile>
   </ItemGroup>
   <ItemGroup>

@@ -31,14 +31,9 @@ namespace MediatRvs
     [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)] // Info on this package for Help/About
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [ProvideToolWindow(typeof(MediatrToolWindow))]
-    [Guid(MediatRvsPackage.PackageGuidString)]
+    [Guid(PackageGuids.guidShowHandlersToolWindowPackageString)]
     public sealed class MediatRvsPackage : AsyncPackage
     {
-        /// <summary>
-        /// ShowHandlersToolWindowPackage GUID string.
-        /// </summary>
-        public const string PackageGuidString = "571c21e9-f882-4250-a22d-f90d47e22cfe";
-
         /// <summary>
         /// Initializes a new instance of the <see cref="MediatRvsPackage"/> class.
         /// </summary>
