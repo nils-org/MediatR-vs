@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Windows;
 using System.Windows.Input;
 
 namespace MediatRvs
 {
-    // https://stackoverflow.com/a/4498006/180156
+    // inspired by https://stackoverflow.com/a/4498006/180156
 
     public class MouseDoubleClick
     {
@@ -91,14 +91,13 @@ namespace MediatRvs
                 var timeBetweenClicks = DateTime.Now - lastClick;
                 var timeout = GetDoubleClickTimeout((DependencyObject)sender);
 
-                if (timeBetweenClicks < timeout)
+                if (timeBetweenClicks >= timeout)
                 {
-                    // this is it!
-                    lastSender = null;
-                    OnMouseDoubleClick(sender, e);
+                    return;
                 }
 
-                return;
+                lastSender = null;
+                OnMouseDoubleClick(sender, e);
             }
 
             // this is the first click

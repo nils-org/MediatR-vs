@@ -51,3 +51,5 @@ docs/input/tasks/*
 
 # Wyam related
 config.wyam.*
+.vshistory/
+.history/

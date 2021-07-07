@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace MediatRvs.Models
 {
@@ -6,7 +6,8 @@ namespace MediatRvs.Models
     {
         public string Name { get; set; }
 
-        public IEnumerable<MediatrElement> Elements { get; set; }
         public string Path { get; set; }
+
+        public IEnumerable<MediatrElement> Elements { get; set; }
     }
 }

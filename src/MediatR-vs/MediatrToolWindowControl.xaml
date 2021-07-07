@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MediatRvs.MediatrToolWindowControl"
+<UserControl x:Class="MediatRvs.MediatrToolWindowControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -7,35 +7,66 @@
              xmlns:local="clr-namespace:MediatRvs"
              xmlns:models="clr-namespace:MediatRvs.Models"
              xmlns:toolkit="clr-namespace:Community.VisualStudio.Toolkit;assembly=Community.VisualStudio.Toolkit"
+             xmlns:catalog="clr-namespace:Microsoft.VisualStudio.Imaging;assembly=Microsoft.VisualStudio.ImageCatalog"
+             xmlns:imaging="clr-namespace:Microsoft.VisualStudio.Imaging;assembly=Microsoft.VisualStudio.Imaging"
              toolkit:Themes.UseVsTheme="True"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300"
-             d:DataContext="{d:DesignInstance local:MediatrToolWindowControl, IsDesignTimeCreatable=False}"
+             d:DataContext="{d:DesignInstance local:MediatrToolWindowViewModel, IsDesignTimeCreatable=False}"
              Name="MyToolWindow">
     <DockPanel>
-        <Menu DockPanel.Dock="Top">
-            <MenuItem Command="{Binding Path=RefreshCommand}" Header="Refresh" />
-        </Menu>
+        <ToolBarTray DockPanel.Dock="Top"
+                     Background="{DynamicResource VsBrush.CommandBarGradientBegin}">
+            <ToolBar Background="{DynamicResource VsBrush.CommandBarGradientBegin}"
+                     IsManipulationEnabled="False"
+                     >
+                <Button Command="{Binding Path=RefreshCommand}"
+                        ToolTip="Refresh">
+                    <imaging:CrispImage Width="16" Height="16" Moniker="{x:Static catalog:KnownMonikers.Refresh}" />
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
         <StatusBar DockPanel.Dock="Bottom"></StatusBar>
-        <TreeView ItemsSource="{Binding Path=Projects}">
+        <TreeView x:Name="TreeView"
+                  ItemsSource="{Binding Path=Projects}">
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="{x:Type TreeViewItem}">
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Margin" Value="0"/>
+                    <Setter Property="Foreground" Value="{DynamicResource VsBrush.WindowText}"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource VsBrush.TreeView.SelectedItemActive}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource VsBrush.TreeView.SelectedItemActiveText}"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="True"/>
+                                <Condition Property="IsSelectionActive" Value="False"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" Value="{DynamicResource VsBrush.TreeView.SelectedItemInactive}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource VsBrush.TreeView.SelectedItemInactiveText}"/>
+                        </MultiTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TreeView.ItemContainerStyle>
             <TreeView.Resources>
-                <HierarchicalDataTemplate DataType="{x:Type models:MediatrProject}" 
-                                              ItemsSource="{Binding Elements}">
-                    <Label Content="{Binding Path=Name}"
-                           ToolTip="{Binding Path=Path}"/>
+                <HierarchicalDataTemplate DataType="{x:Type models:MediatrProject}"
+                                          ItemsSource="{Binding Elements}">
+                    <TextBlock Text="{Binding Path= Name}"
+                               ToolTip="{Binding Path= Path}"/>
                 </HierarchicalDataTemplate>
-
-                <HierarchicalDataTemplate DataType="{x:Type models:MediatrElement}">
-                        <StackPanel Orientation="Horizontal"
-                                    local:MouseDoubleClick.Command="{Binding Path=OpenDocument}"
-                                    ToolTip="{Binding FullName}">
-                            <Label Content="{Binding Path=Name}"/>
-                            <Label Content="[" />
-                            <Label Content="{Binding Path=ElementType}" />
-                            <Label Content="]" />
-                        </StackPanel>
-                </HierarchicalDataTemplate>
-
+                <DataTemplate  DataType="{x:Type models:MediatrElement}">
+                    <StackPanel Orientation="Horizontal"
+                                local:MouseDoubleClick.Command="{Binding Path=OpenDocument}"
+                                ToolTip="{Binding FullName}">
+                        <!-- <Image Source="/WpfTutorialSamples;component/Images/user.png" Margin="0,0,5,0" /> -->
+                        <TextBlock Text="{Binding Path= Name}" />
+                        <TextBlock Text=" (" />
+                        <TextBlock Text="{Binding Path=ElementType}" />
+                        <TextBlock Text=")" />
+                    </StackPanel>
+                </DataTemplate>
             </TreeView.Resources>
         </TreeView>
     </DockPanel>

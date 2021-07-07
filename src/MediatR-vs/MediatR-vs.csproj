@@ -52,6 +52,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="MediatrToolWindowViewModel.cs" />
     <Compile Include="Models\MediatrElement.cs" />
     <Compile Include="Models\MediatrElementType.cs" />
     <Compile Include="Models\MediatrProject.cs" />
