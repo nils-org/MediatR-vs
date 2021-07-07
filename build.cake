@@ -30,7 +30,7 @@ Setup(ctx =>
         XmlPoke(
           vsix, 
           "/x:PackageManifest/x:Metadata/x:Identity/@Version", 
-          gitVersion.MajorMinorPatch, 
+          $"{gitVersion.MajorMinorPatch}.{gitVersion.PreReleaseNumber}", // TODO: differentiate between CI-builds and Releases
           new XmlPokeSettings 
           {
             Namespaces = new Dictionary<string, string> 
