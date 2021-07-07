@@ -23,7 +23,7 @@ namespace MediatRvs.Models
 
         private void OpenInEditor()
         {
-            ThreadHelper.JoinableTaskFactory.Run(async () =>
+            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
             {
                 await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
                 var window = ProjectItem.Open(Constants.vsViewKindCode);
@@ -36,7 +36,7 @@ namespace MediatRvs.Models
                 CodeElement.StartPoint.TryToShow(vsPaneShowHow.vsPaneShowAsIs, CodeElement.StartPoint);
                 var selection = (TextSelection)window.Document.Selection;
                 selection.MoveToPoint(CodeElement.StartPoint);
-            });
+            }).FireAndForget();
         }
     }
 }

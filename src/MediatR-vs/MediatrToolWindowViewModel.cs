@@ -17,9 +17,8 @@ namespace MediatRvs
 
         public MediatrToolWindowViewModel()
         {
-            RefreshCommand = new DelegateCommand(LoadProjects);
-            ThreadHelper.JoinableTaskFactory.Run(async () => await InitLoadProjectsAsync());
-
+            RefreshCommand = new DelegateCommand(() => LoadProjectsAsync().FireAndForget());
+            LoadProjectsAsync().FireAndForget();
         }
 
         public MediatrProject[] Projects
@@ -42,15 +41,10 @@ namespace MediatRvs
             }
         }
 
-        private async Task InitLoadProjectsAsync()
+        private async Task LoadProjectsAsync()
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
-            LoadProjects();
-        }
-
-        private void LoadProjects()
-        {
-            ThreadHelper.JoinableTaskFactory.Run(async () =>
+            await ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
             {
                 await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
                 var adapter = new ProjectContentAdapter();

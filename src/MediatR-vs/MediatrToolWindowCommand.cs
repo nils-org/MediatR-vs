@@ -72,14 +72,14 @@ namespace MediatRvs
         /// <param name="e">The event args.</param>
         private void Execute(object sender, EventArgs e)
         {
-            package.JoinableTaskFactory.Run(async delegate
+            package.JoinableTaskFactory.RunAsync(async delegate
             {
                 var window = await package.ShowToolWindowAsync(typeof(MediatrToolWindow), 0, true, package.DisposalToken);
                 if (window?.Frame == null)
                 {
                     throw new NotSupportedException("Cannot create tool window");
                 }
-            });
+            }).FireAndForget();
         }
     }
 }
