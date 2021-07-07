@@ -3,10 +3,12 @@
     <Metadata>
         <Identity Id="3a8c8d1d-7dd3-43ff-ac42-df24457b78fd" Version="0.1.0" Language="en-US" Publisher="Nils Andresen" />
         <DisplayName>MediatR tools for Visual Studio</DisplayName>
-        <Description xml:space="preserve">Provides some tooling in MediatR projects. </Description>
+        <Description xml:space="preserve">Provides some tooling in MediatR projects.</Description>
         <MoreInfo>https://github.com/nils-org/MediatR-vs/</MoreInfo>
-        <License>LICENSE.txt</License>
+        <License>Resources\LICENSE.txt</License>
         <ReleaseNotes>https://github.com/nils-org/MediatR-vs/releases/</ReleaseNotes>
+        <Icon>Resources\vsixPackageLogo.png</Icon>
+        <PreviewImage>Resources\vsixPackageLogo.png</PreviewImage>
         <Tags>MediatR</Tags>
         <Preview>true</Preview>
     </Metadata>

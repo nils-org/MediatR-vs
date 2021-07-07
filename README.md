@@ -16,7 +16,7 @@ Visual Studio tooling for MediatR projects.
 ## Install
 
 You can find the latest build version on the [Open VSIX Gallery](https://www.vsixgallery.com/extension/3a8c8d1d-7dd3-43ff-ac42-df24457b78fd)
-and the current stable version in the [Marketplace](https://marketplace.visualstudio.com/items?itemName=...)
+and the current stable version in the [Marketplace](https://marketplace.visualstudio.com/items?itemName=nilsa.mediatr-vs)
 
 ## Usage
 
@@ -24,6 +24,11 @@ The following features are part of the extension:
 
 ### ToolWindow
 
+> View -> Other Windows -> MediatR Overview
+
+The tool window lists all the `Notifications`, `Requests` and corresponding Handlers in a treeview (grouped by project).
+
+Double clicking on a node in the tree will jump to the corresponding code implementation.
 
 ## Maintainer
 

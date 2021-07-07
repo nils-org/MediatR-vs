@@ -30,7 +30,7 @@ Setup(ctx =>
         XmlPoke(
           vsix, 
           "/x:PackageManifest/x:Metadata/x:Identity/@Version", 
-          gitVersion.SemVer, 
+          $"{gitVersion.MajorMinorPatch}.{gitVersion.PreReleaseNumber}", // TODO: differentiate between CI-builds and Releases
           new XmlPokeSettings 
           {
             Namespaces = new Dictionary<string, string> 
@@ -41,6 +41,9 @@ Setup(ctx =>
         );
       }
       
+	  // TODO: source.extension.cs is generated from the vsixmanifest - if we modify the vsixmanifest, we should ensure 
+	  // that source.extension.cs is updated, too.
+	  
       version = gitVersion.SemVer;
       Information($"Building version {gitVersion.SemVer}.");
   }

@@ -1,30 +1,31 @@
 using EnvDTE;
 
 using MediatRvs.Extensions;
+using MediatRvs.Models;
+
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MediatRvs.Models;
+
 using CodeClass = EnvDTE.CodeClass;
 
 namespace MediatRvs
 {
     public class ProjectContentAdapter
     {
-        public IEnumerable<MediatrProject> GetMessages()
+        public IEnumerable<MediatrProject> GetMediatRContent()
         {
             ThreadHelper.ThrowIfNotOnUIThread();
-            var service = (DTE)Microsoft.VisualStudio.Shell.Package.GetGlobalService(typeof(SDTE));
-            var projects = service.Solution.Projects.Cast<Project>();
+            var projects = GetAllProjects();
             foreach (var project in projects)
             {
                 Logger.Log("Crawling Project: " + project.FullName);
                 var projectItems = GetAllProjectItems(project).ToList();
-
                 var elements = new List<MediatrElement>();
+
                 foreach (var item in projectItems)
                 {
                     try
@@ -40,7 +41,7 @@ namespace MediatRvs
                                         FullName = e.FullName,
                                         ElementType = GetElementType(e),
                                         ProjectItem = item,
-                                        CodeElement = e
+                                        CodeElement = e,
                                     };
                                 })
                                 .Where(x => x.ElementType != MediatrElementType.Unknown)
@@ -52,7 +53,13 @@ namespace MediatRvs
                     catch (Exception e)
                     {
                         Logger.Log(e);
+                        e.Log();
                     }
+                }
+
+                if (elements.Count == 0)
+                {
+                    continue;
                 }
 
                 yield return new MediatrProject
@@ -61,6 +68,7 @@ namespace MediatRvs
                     Path = project.FullName,
                     Elements = elements
                 };
+
             }
         }
 
@@ -126,7 +134,6 @@ namespace MediatRvs
             return MediatrElementType.Unknown;
         }
 
-
         private IEnumerable<CodeElement> GetAllElements(ProjectItem item)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
@@ -187,6 +194,45 @@ namespace MediatRvs
                     result.Add(item);
 
                     item.ProjectItems.EnsureNotNull<ProjectItem>().ToList().ForEach(x => stack.Push(x));
+                }
+                catch (Exception e)
+                {
+                    Logger.Log(e);
+                }
+            }
+
+            return result;
+        }
+
+        private IEnumerable<Project> GetAllProjects()
+        {
+            ThreadHelper.ThrowIfNotOnUIThread();
+            var stack = new Stack<Project>();
+            var service = (DTE)Package.GetGlobalService(typeof(SDTE));
+            service.Solution.Projects.EnsureNotNull<Project>().ToList().ForEach(x => stack.Push(x));
+
+            var result = new List<Project>();
+            while (stack.Count > 0)
+            {
+                try
+                {
+                    var item = stack.Pop();
+                    if (!string.IsNullOrEmpty(item.FileName))
+                    {
+                        // it's only a project if it has a filename...
+                        result.Add(item);
+                    }
+
+                    item.ProjectItems
+                        .EnsureNotNull<ProjectItem>()
+                        .Select(x =>
+                        {
+                            ThreadHelper.ThrowIfNotOnUIThread();
+                            return x.Object;
+                        })
+                        .OfType<Project>()
+                        .ToList()
+                        .ForEach(p => stack.Push(p));
                 }
                 catch (Exception e)
                 {
