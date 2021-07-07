@@ -28,7 +28,7 @@ namespace MediatRvs
     /// </para>
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
-    [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)] // Info on this package for Help/About
+    [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)] // Info on this package for Help/About
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [ProvideToolWindow(typeof(MediatrToolWindow))]
     [Guid(MediatRvsPackage.PackageGuidString)]
@@ -64,6 +64,7 @@ namespace MediatRvs
             // When initialized asynchronously, the current thread may be a background thread at this point.
             // Do any initialization that requires the UI thread after switching to the UI thread.
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
+            
             Logger.Initialize(this, Vsix.Name);
             await MediatrToolWindowCommand.InitializeAsync(this).ConfigureAwait(true);
 

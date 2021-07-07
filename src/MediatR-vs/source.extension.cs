@@ -9,7 +9,7 @@ namespace MediatRvs
     {
         public const string Id = "3a8c8d1d-7dd3-43ff-ac42-df24457b78fd";
         public const string Name = "MediatR tools for Visual Studio";
-        public const string Description = @"Provides some tooling in MediatR projects. ";
+        public const string Description = @"Provides some tooling in MediatR projects.";
         public const string Language = "en-US";
         public const string Version = "0.1.0";
         public const string Author = "Nils Andresen";

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This file is NOT compatible with Silverlight-->
+<Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+  <Canvas Name="svg5" Width="39.687498" Height="39.687501">
+    <Canvas.RenderTransform>
+      <TranslateTransform X="0" Y="0"/>
+    </Canvas.RenderTransform>
+    <Canvas.Resources/>
+    <!--Unknown tag: sodipodi:namedview-->
+    <Canvas Name="layer1">
+      <Canvas Name="g726">
+        <Canvas.RenderTransform>
+          <MatrixTransform Matrix="1.1341585 0 0 1.1341585 64.165441 2.3121833"/>
+        </Canvas.RenderTransform>
+        <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="-30.471323" Canvas.Top="20.63718" Width="1.9503365" Height="1.8946992" Name="rect16284845" Fill="#FF1594C9" StrokeThickness="0" Stroke="#FF464BD7" StrokeMiterLimit="4" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+        <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="-25.76301" Canvas.Top="20.62883" Width="1.9503365" Height="1.8946992" Name="rect162848446" Fill="#FF1594C9" StrokeThickness="0" Stroke="#FF464BD7" StrokeMiterLimit="4" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+        <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="-55.541225" Canvas.Top="23.345436" Width="2.0805438" Height="2.073215" Name="rect162848135" Fill="#FF1594C9" StrokeThickness="0" Stroke="#FF464BD7" StrokeMiterLimit="4" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+        <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="-49.90279" Canvas.Top="23.345438" Width="2.0805438" Height="2.073215" Name="rect1628481310" Fill="#FF1594C9" StrokeThickness="0" Stroke="#FF464BD7" StrokeMiterLimit="4" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+        <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="-52.630806" Canvas.Top="23.301985" Width="2.0805438" Height="2.073215" Name="rect16284813124" Fill="#FF1594C9" StrokeThickness="0" Stroke="#FF464BD7" StrokeMiterLimit="4" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+        <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="-31.163439" Canvas.Top="23.345436" Width="2.0805438" Height="2.073215" Name="rect16284813" Fill="#FF1594C9" StrokeThickness="0" Stroke="#FF464BD7" StrokeMiterLimit="4" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+        <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="-25.525003" Canvas.Top="23.345438" Width="2.0805438" Height="2.073215" Name="rect162848131" Fill="#FF1594C9" StrokeThickness="0" Stroke="#FF464BD7" StrokeMiterLimit="4" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+        <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="-28.253021" Canvas.Top="23.301985" Width="2.0805438" Height="2.073215" Name="rect1628481312" Fill="#FF1594C9" StrokeThickness="0" Stroke="#FF464BD7" StrokeMiterLimit="4" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+        <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="-28.553728" Canvas.Top="26.2124" Width="2.6458318" Height="2.6458342" Name="rect162845" Fill="#FF1594C9" StrokeThickness="0" Stroke="#FF464BD7" StrokeMiterLimit="4" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+        <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="-31.993303" Canvas.Top="26.2124" Width="2.6458318" Height="2.6458342" Name="rect1628481" Fill="#FF1594C9" StrokeThickness="0" Stroke="#FF464BD7" StrokeMiterLimit="4" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+        <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="-25.09033" Canvas.Top="26.236214" Width="2.6458318" Height="2.6458342" Name="rect16281" Fill="#FF1594C9" StrokeThickness="0" Stroke="#FF464BD7" StrokeMiterLimit="4" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+        <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="-52.895393" Canvas.Top="26.2124" Width="2.6458318" Height="2.6458342" Name="rect16284" Fill="#FF1594C9" StrokeThickness="0" Stroke="#FF464BD7" StrokeMiterLimit="4" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+        <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="-56.334969" Canvas.Top="26.2124" Width="2.6458318" Height="2.6458342" Name="rect162848" Fill="#FF1594C9" StrokeThickness="0" Stroke="#FF464BD7" StrokeMiterLimit="4" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+        <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="-54.747501" Canvas.Top="20.613535" Width="1.9503365" Height="1.8946992" Name="rect1628484" Fill="#FF1594C9" StrokeThickness="0" Stroke="#FF464BD7" StrokeMiterLimit="4" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+        <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="-50.039188" Canvas.Top="20.605185" Width="1.9503365" Height="1.8946992" Name="rect16284844" Fill="#FF1594C9" StrokeThickness="0" Stroke="#FF464BD7" StrokeMiterLimit="4" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path728" Fill="#FF1594C9" StrokeThickness="0.264583">
+          <Path.Data>
+            <PathGeometry Figures="m -42.486735 22.956073 -3.217384 -4.284297 1.696029 -0.07823 1.696029 -0.07824 v -5.155784 c 0 -5.6298561 -0.160967 -6.4547171 -1.458827 -7.4756141 -1.528417 -1.202252 -3.783495 -0.291204 -4.35279 1.75852 -0.148966 0.53635 -0.271512 3.5052591 -0.272324 6.5975771 l -0.0015 5.622395 h -1.190625 -1.190625 v 1.322917 c 0 1.234722 -0.0441 1.322917 -0.661458 1.322917 -0.617361 0 -0.661458 -0.0882 -0.661458 -1.322917 v -1.322916 h -1.20294 -1.202965 l 0.04839 -5.754687 c 0.05318 -6.3240421 0.294316 -8.0714391 1.36624 -9.9005401 0.79164 -1.350831 2.603433 -2.697307 4.282933 -3.182961 2.714629 -0.78497702 7.597143 -0.15936598 8.756794 1.122034 0.591959 0.654107 0.975762 0.654107 1.567721 0 1.165026 -1.28733898 6.042106 -1.90621702 8.784155 -1.114666 1.731158 0.499736 3.515328 1.88363 4.363138 3.384277 0.994788 1.760802 1.263943 3.947757 1.274217 10.3533151 l 0.0082 5.093228 h -1.190625 -1.190625 v 1.322917 c 0 1.234722 -0.0441 1.322917 -0.661458 1.322917 -0.61736 0 -0.661458 -0.0882 -0.661458 -1.322917 v -1.322917 h -1.190625 -1.190625 l -0.0015 -5.622395 c -8.05e-4 -3.092318 -0.123351 -6.0612271 -0.272318 -6.5975771 -0.546922 -1.969176 -2.573001 -2.868486 -4.241709 -1.882755 -1.344326 0.794113 -1.569907 1.888132 -1.569907 7.6137021 v 5.141931 l 1.750812 0.07824 1.750813 0.07823 -3.11059 4.101042 c -1.710825 2.255573 -3.1833 4.183507 -3.272167 4.284297 -0.08887 0.10079 -1.609399 -1.744678 -3.378959 -4.101042 z" FillRule="NonZero"/>
+          </Path.Data>
+        </Path>
+        <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="-49.431995" Canvas.Top="26.236214" Width="2.6458318" Height="2.6458342" Name="rect1628" Fill="#FF1594C9" StrokeThickness="0" Stroke="#FF464BD7" StrokeMiterLimit="4" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+      </Canvas>
+    </Canvas>
+    <!--Unknown tag: metadata-->
+  </Canvas>
+</Viewbox>

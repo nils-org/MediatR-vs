@@ -41,6 +41,9 @@ Setup(ctx =>
         );
       }
       
+	  // TODO: source.extension.cs is generated from the vsixmanifest - if we modify the vsixmanifest, we should ensure 
+	  // that source.extension.cs is updated, too.
+	  
       version = gitVersion.SemVer;
       Information($"Building version {gitVersion.SemVer}.");
   }
