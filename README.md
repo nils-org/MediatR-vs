@@ -24,6 +24,11 @@ The following features are part of the extension:
 
 ### ToolWindow
 
+> View -> Other Windows -> MediatR Overview
+
+The tool window lists all the `Notifications`, `Requests` and corresponding Handlers in a treeview (grouped by project).
+
+Double clicking on a node in the tree will jump to the corresponding code implementation.
 
 ## Maintainer
 

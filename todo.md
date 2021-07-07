@@ -1,16 +1,8 @@
 # TODO
 
-## Needed for release 0.1.0
-* UI more like VS
-  * Current selection in tree (esp. in dark mode)
-  * "menu stripe" in tool window
-
-
 ## New Features/Improvements
 
 * searching in tool window
-* add a sho-all button in menu stripe to un-hide "empty" projects in tool window?
-* Icon for vsix
 * Icons in tree
 * Remove the logger nupkg and implement/search a better one (i.e. one with "verbose")
 * Different groupings in tree
