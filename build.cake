@@ -1,5 +1,5 @@
 
-#tool dotnet:?package=GitVersion.Tool&version=5.8.1
+#tool dotnet:?package=GitVersion.Tool&version=5.8.3
 #addin nuget:?package=System.Net.Http&version=4.3.4
 
 
