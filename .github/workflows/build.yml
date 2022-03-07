@@ -36,7 +36,7 @@ jobs:
         run: |
           .\build.ps1 --verbosity=diagnostic
       - name: Upload Packages
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: runner.os == 'Windows'
         with:
           if-no-files-found: warn
