@@ -94,7 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Community.VisualStudio.Toolkit">
-      <Version>16.0.76.309</Version>
+      <Version>17.0.76.309</Version>
     </PackageReference>
     <PackageReference Include="VsixLogger">
       <Version>1.1.44</Version>
