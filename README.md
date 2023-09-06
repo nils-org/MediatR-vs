@@ -36,7 +36,7 @@ Double clicking on a node in the tree will jump to the corresponding code implem
 
 ## Contributing
 
-Cake.7zip follows the [Contributor Covenant][contrib-covenant] Code of Conduct.
+Mediatr-vs follows the [Contributor Covenant][contrib-covenant] Code of Conduct.
 
 We accept Pull Requests.
 
