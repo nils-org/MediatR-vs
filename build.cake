@@ -28,22 +28,22 @@ Setup(ctx =>
       {
         Verbose($"Updating version of {vsix.FullPath}");
         XmlPoke(
-          vsix, 
-          "/x:PackageManifest/x:Metadata/x:Identity/@Version", 
+          vsix,
+          "/x:PackageManifest/x:Metadata/x:Identity/@Version",
           $"{gitVersion.MajorMinorPatch}.{gitVersion.PreReleaseNumber}", // TODO: differentiate between CI-builds and Releases
-          new XmlPokeSettings 
+          new XmlPokeSettings
           {
-            Namespaces = new Dictionary<string, string> 
+            Namespaces = new Dictionary<string, string>
             {
               { "x", "http://schemas.microsoft.com/developer/vsx-schema/2011" }
             }
           }
         );
       }
-      
-	  // TODO: source.extension.cs is generated from the vsixmanifest - if we modify the vsixmanifest, we should ensure 
+
+	  // TODO: source.extension.cs is generated from the vsixmanifest - if we modify the vsixmanifest, we should ensure
 	  // that source.extension.cs is updated, too.
-	  
+
       version = gitVersion.SemVer;
       Information($"Building version {gitVersion.SemVer}.");
   }
@@ -52,11 +52,11 @@ Setup(ctx =>
       Information("Local build.");
       var vsix = GetFiles("./src/**/*.vsixmanifest").First();
       version = XmlPeek(
-          vsix, 
-          "/x:PackageManifest/x:Metadata/x:Identity/@Version", 
-          new XmlPeekSettings 
+          vsix,
+          "/x:PackageManifest/x:Metadata/x:Identity/@Version",
+          new XmlPeekSettings
           {
-            Namespaces = new Dictionary<string, string> 
+            Namespaces = new Dictionary<string, string>
             {
               { "x", "http://schemas.microsoft.com/developer/vsx-schema/2011" }
             }
@@ -96,7 +96,7 @@ Task("Build")
     MSBuild(solutionPath, settings =>
         settings.SetPlatformTarget(PlatformTarget.MSIL)
             .SetMSBuildPlatform(MSBuildPlatform.x86)
-            .UseToolVersion(MSBuildToolVersion.VS2019)
+            .UseToolVersion(MSBuildToolVersion.VS2022)
             .SetVerbosity(Verbosity.Quiet)
             .WithTarget("Build")
             .SetConfiguration(configuration));
@@ -134,11 +134,11 @@ Task("PublishToOpenGallery")
         System.Net.Http.HttpMethod.Post,
         url)
       {
-        Content = content  
+        Content = content
       };
 
       var response = client.Send(request);
-      if(response.IsSuccessStatusCode) 
+      if(response.IsSuccessStatusCode)
       {
         Information($"Uploaded {fileName}");
       }
@@ -147,7 +147,7 @@ Task("PublishToOpenGallery")
           Warning($"Error uploading vsix. Status:{response.StatusCode} - {response.ReasonPhrase}");
           Verbose(response.Content.ReadAsStringAsync().GetAwaiter().GetResult());
       }
-      
+
   }
 });
 
