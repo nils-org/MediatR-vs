@@ -99,7 +99,7 @@
     <PackageReference Include="VsixLogger">
       <Version>1.1.44</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.7.37357">
+    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.8.37222">
       <ExcludeAssets>runtime</ExcludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
